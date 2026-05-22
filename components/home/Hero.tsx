@@ -5,19 +5,16 @@ export default function Hero() {
   return (
     <section className="relative w-full overflow-hidden bg-black">
       <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 flex flex-col md:flex-row items-center gap-8 md:gap-0 py-14 md:py-0 md:min-h-[88vh]">
-
         {/* Left — full width mobile, half desktop */}
         <div className="w-full md:flex-1 md:max-w-xl z-10">
-
           <h1 className="font-black text-white leading-[1.1] mb-4 text-4xl sm:text-5xl md:text-5xl lg:text-6xl">
-            We create digital
-            solutions that drive{" "}
+            We create digital solutions that drive{" "}
             <span className="text-[#5000FF]">real impact</span>
           </h1>
 
           <p className="text-white/60 text-sm sm:text-base md:text-base lg:text-lg mt-5 mb-8 leading-relaxed max-w-md">
-            We are a digital studio focused on building modern, fast
-            and scalable websites, applications and brands.
+            We are a digital studio focused on building modern, fast and
+            scalable websites, applications and brands.
           </p>
 
           <div className="flex flex-wrap items-center gap-3">
@@ -29,7 +26,7 @@ export default function Hero() {
             </Link>
             <Link
               href="/services"
-              className="border-2 border-white/80 bg-transparent text-white text-sm sm:text-base font-semibold px-5 sm:px-6 py-3 rounded-full hover:bg-white hover:text-[#5000FF] transition-all duration-200"
+              className="border-2 bg-[#EDEDED] border-white/80  text-[#5000FF] text-sm sm:text-base font-semibold px-5 sm:px-6 py-3 rounded-full hover:bg-white hover:text-[#5000FF] transition-all duration-200"
             >
               Services
             </Link>
@@ -55,7 +52,6 @@ export default function Hero() {
           </div>
           <div className="absolute inset-0 bg-purple-700/10 blur-3xl rounded-full pointer-events-none" />
         </div>
-
       </div>
     </section>
   );
