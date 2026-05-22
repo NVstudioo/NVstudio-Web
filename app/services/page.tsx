@@ -1,0 +1,116 @@
+import HeroSection from "../../components/servicesPage/HeroSection";
+import ServicesSection from "../../components/servicesPage/ServicesSection";
+import ProcessSection from "../../components/servicesPage/ProcessSection";
+import PricingSection from "../../components/servicesPage/PricingSection";
+import ContactSection from "../../components/servicesPage/ContactSection";
+import GallerySection from "../../components/servicesPage/GallerySection";
+import PartnersSection from "../../components/servicesPage/PartnersSection";
+import CTASection from "../../components/servicesPage/CTASection";
+
+export default function ServicesPage() {
+  return (
+    <div className="bg-[#01010B] text-[#EDEDED] overflow-x-hidden">
+      <style>{`
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+        body { font-family: 'Poppins', sans-serif; }
+        h1,h2,h3,h4,h5,h6 { font-family: 'Poppins', sans-serif; }
+        .text-responsive-hero { font-size: clamp(28px, 5vw, 56px); line-height: 1.2; font-weight: 700; }
+        .text-responsive-h1 { font-size: clamp(24px, 4vw, 48px); line-height: 1.2; font-weight: 700; }
+        .text-responsive-h2 { font-size: clamp(20px, 3.5vw, 40px); line-height: 1.3; font-weight: 700; }
+        .text-responsive-h3 { font-size: clamp(16px, 2.5vw, 28px); line-height: 1.3; font-weight: 600; }
+        .text-responsive-body { font-size: clamp(14px, 1.5vw, 16px); line-height: 1.6; }
+        .text-responsive-small { font-size: clamp(12px, 1.2vw, 14px); line-height: 1.5; }
+        @keyframes gradientFlow {
+          0% { background-position: 0% 50%; }
+          50% { background-position: 100% 50%; }
+          100% { background-position: 0% 50%; }
+        }
+        @keyframes marquee {
+          0% { transform: translateX(0); }
+          100% { transform: translateX(-50%); }
+        }
+        .gradient-btn { background: linear-gradient(90deg, #5000FF, #EA00FF); background-size: 200% 200%; animation: gradientFlow 3s ease infinite; }
+        .section-label { color: #EA00FF; font-size: clamp(9px, 1vw, 12px); font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; }
+        .service-card {
+          background: linear-gradient(135deg, rgba(80,0,255,0.07), rgba(234,0,255,0.03));
+          border: 1px solid rgba(80,0,255,0.2);
+          transition: all 0.3s ease;
+        }
+        .service-card:hover {
+          border-color: #5000FF;
+          transform: translateY(-4px);
+          box-shadow: 0 16px 40px rgba(80,0,255,0.15);
+        }
+        .tag-pill {
+          border: 1px solid rgba(80,0,255,0.3);
+          color: rgba(237,237,237,0.4);
+          font-size: clamp(10px, 0.8vw, 12px);
+          padding: 2px 10px;
+          border-radius: 999px;
+        }
+        .pricing-card {
+          background: rgba(255,255,255,0.02);
+          border: 1px solid rgba(80,0,255,0.2);
+          transition: all 0.3s ease;
+        }
+        .pricing-card.highlighted {
+          border-color: #5000FF;
+          background: rgba(80,0,255,0.07);
+        }
+     .input-field {
+  background: #09060E;
+  border: 1px solid;
+  border-color: #241F31;
+  border-radius: 8px;
+  color: #EDEDED;
+  padding-top: 11px;
+  padding-bottom: 11px;
+  padding-right: 14px;
+  font-size: 13px;
+  width: 100%;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+/* Icon olan inputlar üçün ayrıca class */
+.input-field-with-icon {
+  padding-left: 36px; /* Icon üçün kifayət qədər boşluq */
+}
+
+.input-field::placeholder {
+  color: #A2A2A2;
+}
+
+.input-field:focus {
+  border-color: #5000FF;
+}
+        .marquee-track { display: flex; animation: marquee 22s linear infinite; width: max-content; }
+        .icon-box {
+          width: 36px; height: 36px; border-radius: 8px;
+          background: rgba(80,0,255,0.12);
+          border: 1px solid rgba(80,0,255,0.28);
+          display: flex; align-items: center; justify-content: center;
+          flex-shrink: 0;
+          border-radius: 10px;
+        }
+        .proces-box {
+          width: 70px; height: 70px; border-radius: 8px;
+          background: rgba(80,0,255,0.12);
+          border: 1px solid rgba(80,0,255,0.28);
+          display: flex; align-items: center; justify-content: center;
+          flex-shrink: 0;
+          border-radius: 10px;
+        }
+      `}</style>
+
+      <HeroSection />
+      <ServicesSection />
+      <ProcessSection />
+      <PricingSection />
+      <ContactSection />
+      <GallerySection />
+      <PartnersSection />
+      <CTASection />
+    </div>
+  );
+}
