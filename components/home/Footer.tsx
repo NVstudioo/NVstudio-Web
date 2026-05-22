@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 const quickLinks = ["Home", "About", "Services", "Contact"];
 const services = [
@@ -51,29 +52,33 @@ const socialLinks = [
 export default function Footer() {
   return (
     <footer className="w-full bg-[#0a0a1a] border-t border-white/5 mt-8">
-      <div className="px-8 py-14 grid grid-cols-1 md:grid-cols-4 gap-10">
-        {/* Brand column */}
-        <div className="md:col-span-1">
+      {/* Main grid: 1col → 2col → 4col */}
+      <div
+        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10"
+        style={{ padding: "clamp(2.5rem, 6vw, 3.5rem) clamp(1.25rem, 5vw, 4rem)" }}
+      >
+        {/* Brand — full width on mobile */}
+        <div className="sm:col-span-2 lg:col-span-1">
           {/* ============================================================
-              🖼️  FOOTER LOGO — NV Studio loqosu
-              Məs: <Image src="/logo.svg" alt="NV Studio"
-                     width={100} height={36} className="mb-4" />
+              🖼️  FOOTER LOGO
               ============================================================ */}
           <div className="flex items-center gap-2 mb-4">
-            {/* 🖼️ Footer logo buraya */}
-            <span className="text-white font-black text-xl">NV</span>
-            <span className="text-white text-xs tracking-[0.25em] font-light uppercase">
-              STUDIO
+            <Image src="/logo.png" alt="NV Studio" width={100} height={40} priority />
+            <span
+              className="text-white tracking-[0.35em] uppercase font-light"
+              style={{ fontSize: "clamp(0.65rem, 1vw, 0.8rem)" }}
+            >
+              Studio
             </span>
           </div>
 
-          <p className="text-white/50 text-sm leading-relaxed mb-6">
-            We build digital products that drive
-            <br />
-            real impact.
+          <p
+            className="text-white/50 leading-relaxed mb-6"
+            style={{ fontSize: "clamp(0.8rem, 1.1vw, 0.875rem)" }}
+          >
+            We build digital products that drive real impact.
           </p>
 
-          {/* Social Icons */}
           <div className="flex items-center gap-3">
             {socialLinks.map((s) => (
               <a
@@ -90,7 +95,7 @@ export default function Footer() {
 
         {/* Quick Links */}
         <div>
-          <h4 className="text-white font-bold mb-5">Quick links</h4>
+          <h4 className="text-white font-bold mb-5 text-sm md:text-base">Quick links</h4>
           <ul className="space-y-3">
             {quickLinks.map((link) => (
               <li key={link}>
@@ -107,7 +112,7 @@ export default function Footer() {
 
         {/* Services */}
         <div>
-          <h4 className="text-white font-bold mb-5">Services</h4>
+          <h4 className="text-white font-bold mb-5 text-sm md:text-base">Services</h4>
           <ul className="space-y-3">
             {services.map((s) => (
               <li key={s}>
@@ -124,37 +129,51 @@ export default function Footer() {
 
         {/* Contact */}
         <div>
-          <h4 className="text-white font-bold mb-5">Contact us</h4>
+          <h4 className="text-white font-bold mb-5 text-sm md:text-base">Contact us</h4>
           <ul className="space-y-4">
-            <li className="flex items-center gap-2 text-white/50 text-sm">
-              <svg className="w-4 h-4 shrink-0" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75" />
-              </svg>
-              info@nvstudios.com
-            </li>
-            <li className="flex items-center gap-2 text-white/50 text-sm">
-              <svg className="w-4 h-4 shrink-0" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 6.75z" />
-              </svg>
-              +994 50 123 45 67
-            </li>
-            <li className="flex items-center gap-2 text-white/50 text-sm">
-              <svg className="w-4 h-4 shrink-0" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
-                <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0z" />
-              </svg>
-              Baku, Azerbaijan
-            </li>
+            {[
+              {
+                icon: (
+                  <svg className="w-4 h-4 shrink-0" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75" />
+                  </svg>
+                ),
+                text: "info@nvstudios.com",
+              },
+              {
+                icon: (
+                  <svg className="w-4 h-4 shrink-0" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 6.75z" />
+                  </svg>
+                ),
+                text: "+994 50 123 45 67",
+              },
+              {
+                icon: (
+                  <svg className="w-4 h-4 shrink-0" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0z" />
+                  </svg>
+                ),
+                text: "Baku, Azerbaijan",
+              },
+            ].map((item) => (
+              <li key={item.text} className="flex items-center gap-2 text-white/50 text-sm">
+                {item.icon}
+                {item.text}
+              </li>
+            ))}
           </ul>
         </div>
       </div>
 
       {/* Bottom bar */}
-      <div className="border-t border-white/5 px-8 py-5 flex flex-col sm:flex-row items-center justify-between gap-3">
-        <p className="text-white/30 text-xs">
-          Copyright © 2026 NV Studios.
-        </p>
-        <div className="flex items-center gap-1 text-xs text-white/30">
+      <div
+        className="border-t border-white/5 flex flex-col sm:flex-row items-center justify-between gap-2"
+        style={{ padding: "clamp(1rem, 2vw, 1.25rem) clamp(1.25rem, 5vw, 4rem)" }}
+      >
+        <p className="text-white/30 text-xs">Copyright © 2026 NV Studios.</p>
+        <div className="flex flex-wrap items-center justify-center gap-1 text-xs text-white/30">
           <span>All Rights Reserved |</span>
           <Link href="/terms" className="text-purple-400 hover:text-purple-300 transition-colors">
             Terms and Conditions

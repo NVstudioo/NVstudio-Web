@@ -26,7 +26,8 @@ const services = [
 function TagIcon() {
   return (
     <svg
-      className="w-7 h-7 text-teal-400 mb-4"
+      className="text-teal-400 mb-4 shrink-0"
+      style={{ width: "clamp(1.25rem, 2vw, 1.75rem)", height: "clamp(1.25rem, 2vw, 1.75rem)" }}
       fill="none"
       stroke="currentColor"
       strokeWidth={1.5}
@@ -44,31 +45,54 @@ function TagIcon() {
 
 export default function Services() {
   return (
-    <section className="w-full px-8 py-16">
-      <p className="text-purple-500 font-semibold text-sm tracking-wider uppercase mb-3">
+    <section
+      className="w-full"
+      style={{ padding: "clamp(2.5rem, 6vw, 4rem) clamp(1.25rem, 5vw, 2rem)" }}
+    >
+      <p
+        className="text-purple-500 font-semibold tracking-widest uppercase mb-3"
+        style={{ fontSize: "clamp(0.7rem, 1vw, 0.8rem)" }}
+      >
         Services
       </p>
-      <h2 className="text-4xl md:text-5xl font-black text-white mb-10">
+      <h2
+        className="font-black text-white mb-8 md:mb-10"
+        style={{ fontSize: "clamp(1.75rem, 4vw, 3rem)" }}
+      >
         What We Offer
       </h2>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+      {/* 1 col mobile → 2 col tablet → 4 col desktop */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5">
         {services.map((service) => (
           <Link
             key={service.title}
             href={service.href}
-            className="group relative border border-white/10 rounded-2xl p-6 bg-white/[0.03] hover:bg-white/[0.07] hover:border-white/20 transition-all duration-300 flex flex-col justify-between min-h-[220px]"
+            className="group border border-white/10 rounded-2xl bg-black/70 hover:bg-white/[0.07] hover:border-white/20 transition-all duration-300 flex flex-col justify-between"
+            style={{
+              padding: "clamp(1rem, 2.5vw, 1.5rem)",
+              minHeight: "clamp(180px, 22vw, 220px)",
+            }}
           >
+            {/* Top: icon + text */}
             <div>
               <TagIcon />
-              <h3 className="text-white font-bold text-xl mb-3">
+              <h3
+                className="text-white font-bold mb-2"
+                style={{ fontSize: "clamp(0.95rem, 1.5vw, 1.2rem)" }}
+              >
                 {service.title}
               </h3>
-              <p className="text-purple-300/80 text-sm leading-relaxed">
+              <p
+                className="text-[#FFD700] leading-relaxed"
+                style={{ fontSize: "clamp(0.75rem, 1vw, 0.875rem)" }}
+              >
                 {service.desc}
               </p>
             </div>
-            <div className="mt-6 text-white/50 group-hover:text-white group-hover:translate-x-1 transition-all duration-200">
+
+            {/* Arrow — sits in normal flow, no absolute */}
+            <div className="mt-4 text-white/40 group-hover:text-white group-hover:translate-x-1 transition-all duration-200 text-lg">
               →
             </div>
           </Link>
