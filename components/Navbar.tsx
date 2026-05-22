@@ -6,7 +6,7 @@ import Image from "next/image";
 import FloatingIcons from "./FloatingIcons";
 
 const navLinks = [
-  { label: "Home", href: "/home" },
+  { label: "Home", href: "/" },
   { label: "Services", href: "/services" },
   { label: "Projects", href: "/projects" },
   { label: "Contact", href: "/contact" },
@@ -15,15 +15,35 @@ const navLinks = [
 
 function MenuIcon() {
   return (
-    <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
-      <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+    <svg
+      className="w-6 h-6"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth={2}
+      viewBox="0 0 24 24"
+    >
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        d="M4 6h16M4 12h16M4 18h16"
+      />
     </svg>
   );
 }
 function CloseIcon() {
   return (
-    <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
-      <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+    <svg
+      className="w-6 h-6"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth={2}
+      viewBox="0 0 24 24"
+    >
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        d="M6 18L18 6M6 6l12 12"
+      />
     </svg>
   );
 }
@@ -51,7 +71,13 @@ export default function Navbar() {
           {/* Logo */}
           <div className="flex items-center gap-3 shrink-0">
             {/* 🖼️ LOGO */}
-            <Image src="/logo.png" alt="NV Studio" width={100} height={40} priority />
+            <Image
+              src="/logo.png"
+              alt="NV Studio"
+              width={100}
+              height={40}
+              priority
+            />
             <span className="text-white text-xs tracking-[0.35em] uppercase font-light">
               Studio
             </span>
@@ -90,7 +116,13 @@ export default function Navbar() {
         <div className="flex md:hidden items-center justify-between px-5 py-4">
           <div className="flex items-center gap-2">
             {/* 🖼️ LOGO */}
-            <Image src="/logo.png" alt="NV Studio" width={70} height={28} priority />
+            <Image
+              src="/logo.png"
+              alt="NV Studio"
+              width={70}
+              height={28}
+              priority
+            />
             <span className="text-white text-[10px] tracking-[0.3em] uppercase font-light">
               Studio
             </span>
@@ -121,7 +153,10 @@ export default function Navbar() {
                 <Link
                   key={link.label}
                   href={link.href}
-                  onClick={() => { setActive(link.label); setMobileOpen(false); }}
+                  onClick={() => {
+                    setActive(link.label);
+                    setMobileOpen(false);
+                  }}
                   className={`px-4 py-3 rounded-xl text-sm font-medium transition-colors duration-200 ${
                     active === link.label
                       ? "text-fuchsia-500 bg-fuchsia-500/5"

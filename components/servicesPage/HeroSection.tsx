@@ -13,6 +13,8 @@ export default function HeroSection() {
           left: "50%",
           transform: "translate(-50%,-50%)",
           pointerEvents: "none",
+          filter: "blur(40px)",
+          opacity: 0.7,
         }}
       />
       <div className="relative z-10 max-w-lg">

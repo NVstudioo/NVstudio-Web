@@ -63,7 +63,7 @@ export default function ProcessSection() {
 
               <div className="md:pr-16 flex items-start gap-4">
                 <div className="proces-box ">
-                  <Image src={l.img} alt="" width={25} height={25} />
+                  <Image src={l.img} alt="" width={40} height={40} />
                 </div>
                 <div>
                   <h4 className="font-semibold text-xl text-[#EDEDED] mb-1">
@@ -76,7 +76,7 @@ export default function ProcessSection() {
               </div>
               <div className="md:pl-16 flex items-start gap-4">
                 <div className="proces-box">
-                  <Image src={r.img} alt="" width={25} height={25} />
+                  <Image src={r.img} alt="" width={40} height={40} />
                 </div>
                 <div>
                   <h4 className="font-semibold text-xl text-[#EDEDED] mb-1">

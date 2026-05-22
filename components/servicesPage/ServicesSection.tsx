@@ -7,6 +7,7 @@ const SERVICES_DATA = [
     description:
       "Interface that feel inevitable-researched,refined, obsessively crafted.",
     tags: ["Figma", "Figma", "Figma"],
+    img: "/webIcon.png",
   },
   {
     number: "02",
@@ -14,6 +15,7 @@ const SERVICES_DATA = [
     description:
       "Interface that feel inevitable-researched,refined, obsessively crafted.",
     tags: ["Figma", "Figma", "Figma"],
+    img: "/uxIcon.png",
   },
   {
     number: "03",
@@ -21,6 +23,7 @@ const SERVICES_DATA = [
     description:
       "Interface that feel inevitable-researched,refined, obsessively crafted.",
     tags: ["Figma", "Figma", "Figma"],
+    img: "/mobiledevIcon.png",
   },
   {
     number: "04",
@@ -28,6 +31,7 @@ const SERVICES_DATA = [
     description:
       "Interface that feel inevitable-researched,refined, obsessively crafted.",
     tags: ["Figma", "Figma", "Figma"],
+    img: "/brandingIcon.png",
   },
   {
     number: "05",
@@ -35,6 +39,7 @@ const SERVICES_DATA = [
     description:
       "Interface that feel inevitable-researched,refined, obsessively crafted.",
     tags: ["Figma", "Figma", "Figma"],
+    img: "/seoIcon.png",
   },
   {
     number: "06",
@@ -42,6 +47,7 @@ const SERVICES_DATA = [
     description:
       "Interface that feel inevitable-researched,refined, obsessively crafted.",
     tags: ["Figma", "Figma", "Figma"],
+    img: "/aiIcon.png",
   },
 ];
 
@@ -59,13 +65,8 @@ export default function ServicesSection() {
             className={`service-card p-7 flex flex-col gap-3 mt-3 bg-[#2C1169] rounded-3xl ${i < 3 ? "border-b border-[rgba(80,0,255,0.12)]" : ""} ${i % 3 !== 2 ? "md:border-r border-[rgba(80,0,255,0.12)]" : ""}`}
           >
             <div className="flex items-start justify-between">
-              <div className="icon-box">
-                <Image
-                  src={`/service-icon-${i + 1}.png`}
-                  alt=""
-                  width={18}
-                  height={18}
-                />
+              <div className="w-13 h-13 bg-[#171125]/20 rounded-2xl flex items-center justify-center">
+                <Image src={s.img} alt="" width={32} height={32} />
               </div>
               <span className="text-[#EDEDED]/10 font-bold text-3xl">
                 {s.number}
