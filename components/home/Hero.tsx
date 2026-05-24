@@ -7,7 +7,7 @@ export default function Hero() {
       <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 flex flex-col md:flex-row items-center gap-8 md:gap-0 py-14 md:py-0 md:min-h-[88vh]">
         {/* Left — full width mobile, half desktop */}
         <div className="w-full md:flex-1 md:max-w-xl z-10">
-          <h1 className="font-black text-white leading-[1.1] mb-4 text-4xl sm:text-5xl md:text-5xl lg:text-6xl">
+          <h1 className="font-black text-white leading-[1.1] mb-4 text-3xl sm:text-5xl md:text-5xl lg:text-6xl">
             We create digital solutions that drive{" "}
             <span className="text-[#5000FF]">real impact</span>
           </h1>

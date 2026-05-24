@@ -67,7 +67,7 @@ export default function Navbar() {
         </div>
 
         {/* ── DESKTOP NAV ── */}
-        <div className="hidden md:flex items-center justify-between max-w-7xl mx-auto px-8 pt-10 pb-5">
+        <div className="hidden md:flex items-center justify-between max-w-7xl mx-auto px-8 pt-3 pb-5">
           {/* Logo */}
           <div className="flex items-center gap-3 shrink-0">
             {/* 🖼️ LOGO */}

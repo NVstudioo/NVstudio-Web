@@ -1,6 +1,6 @@
 export default function HeroSection() {
   return (
-    <section className="relative min-h-[440px] bg-[url('/heroImage.png')] bg-black/50 h-screen bg-cover bg-center flex flex-col items-center justify-center text-center px-6 py-24 overflow-hidden">
+    <section className="relative min-h-[440px] bg-[url('/heroImage.png')] bg-black/50 h-screen bg-cover bg-center max-[640px]:bg-[center_top] flex flex-col items-center justify-center text-center px-6 py-24 overflow-hidden">
       <div
         style={{
           position: "absolute",

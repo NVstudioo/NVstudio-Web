@@ -53,7 +53,7 @@ export default function ContactForm() {
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
-      className="bg-[#09060E] w-190 border border-[#533692] rounded-xl p-5 flex flex-col gap-4"
+      className="bg-[#09060E] w-150 max-[640px]:w-full border border-[#533692] rounded-xl p-5 flex flex-col gap-4"
     >
       {submitSuccess && (
         <div className="bg-green-900/30 border border-green-500/30 rounded-lg p-3 text-green-400 text-responsive-small">
@@ -61,7 +61,7 @@ export default function ContactForm() {
         </div>
       )}
 
-      <div className="grid grid-cols-2 gap-4">
+      <div className="grid grid-cols-2 max-[640px]:grid-cols-1 gap-4">
         {/* Full Name */}
         <div className="flex flex-col">
           <label className="text-responsive-small text-[#EDEDED] mb-1 block">
@@ -122,7 +122,7 @@ export default function ContactForm() {
         </div>
       </div>
 
-      <div className="grid grid-cols-2 gap-4">
+      <div className="grid grid-cols-2 max-[640px]:grid-cols-1 gap-4">
         {/* Phone */}
         <div className="flex flex-col">
           <label className="text-responsive-small text-[#EDEDED] mb-1 block">
@@ -230,7 +230,7 @@ export default function ContactForm() {
       <button
         type="submit"
         disabled={isSubmitting}
-        className="gradient-btn w-70 text-white font-medium py-3 rounded-lg text-responsive-small hover:shadow-xl hover:shadow-[rgba(80,0,255,0.35)] transition-shadow self-start cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
+        className="gradient-btn w-70 max-[640px]:w-full text-white font-medium py-3 rounded-lg text-responsive-small hover:shadow-xl hover:shadow-[rgba(80,0,255,0.35)] transition-shadow self-start cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
       >
         {isSubmitting ? "Sending..." : "Submit"}
       </button>
