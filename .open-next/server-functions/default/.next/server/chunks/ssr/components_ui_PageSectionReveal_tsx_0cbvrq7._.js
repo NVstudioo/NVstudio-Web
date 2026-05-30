@@ -1,0 +1,3 @@
+module.exports=[47517,a=>{"use strict";var b=a.i(87924),c=a.i(46271);let d={up:{opacity:0,y:36},left:{opacity:0,x:-36},right:{opacity:0,x:36}};a.s(["default",0,function({children:a,className:e="",delay:f=0,direction:g="up",amount:h=.25}){return(0,b.jsx)(c.motion.section,{className:e,initial:d[g],whileInView:{opacity:1,x:0,y:0},viewport:{once:!0,amount:h},transition:{duration:.8,delay:f,ease:[.22,1,.36,1]},children:a})}])}];
+
+//# sourceMappingURL=components_ui_PageSectionReveal_tsx_0cbvrq7._.js.map

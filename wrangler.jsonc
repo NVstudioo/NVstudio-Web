@@ -1,23 +1,25 @@
 {
-"$schema": "node_modules/wrangler/config-schema.json",
-"name": "nvstt",
-"main": ".open-next/worker.js",
-"compatibility_date": "2026-05-30",
-"compatibility_flags": ["nodejs_compat"],
+  "$schema": "./node_modules/wrangler/config-schema.json",
 
-"assets": {
-"directory": ".open-next/assets",
-"binding": "ASSETS"
-},
+  "name": "nvstt",
+  "main": ".open-next/worker.js",
 
-"services": [
-{
-"binding": "WORKER_SELF_REFERENCE",
-"service": "nvstt"
-}
-],
+  "compatibility_date": "2026-05-30",
+  "compatibility_flags": ["nodejs_compat"],
 
-"observability": {
-"enabled": true
-}
+  "assets": {
+    "directory": ".open-next/assets",
+    "binding": "ASSETS"
+  },
+
+  "services": [
+    {
+      "binding": "WORKER_SELF_REFERENCE",
+      "service": "nvstt"
+    }
+  ],
+
+  "observability": {
+    "enabled": true
+  }
 }
