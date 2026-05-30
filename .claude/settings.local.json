@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(Get-ChildItem -Path \"c:\\\\Users\\\\User\\\\Desktop\\\\NVstudio-Web\" -Recurse -Force)",
+      "Bash(Select-Object -ExpandProperty FullName)",
+      "Bash(Sort-Object)",
+      "PowerShell(Get-ChildItem -Path \"c:\\\\Users\\\\User\\\\Desktop\\\\NVstudio-Web\" -Depth 2 -Directory | Where-Object { $_.Name -notmatch '\\(node_modules|\\\\.next|\\\\.git\\)' } | ForEach-Object { Write-Output $_.FullName })",
+      "Bash(npm run *)",
+      "Bash(mkdir \"c:\\\\Users\\\\User\\\\Desktop\\\\NVstudio-Web\\\\app\\\\terms\")",
+      "Bash(mkdir \"c:\\\\Users\\\\User\\\\Desktop\\\\NVstudio-Web\\\\app\\\\privacy\")",
+      "Bash(npx tsc *)"
+    ]
+  }
+}
